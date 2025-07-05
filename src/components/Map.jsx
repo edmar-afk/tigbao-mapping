@@ -1,5 +1,4 @@
-import { useState } from "react";import { MapContainer, TileLayer, useMapEvents, Marker, Popup } from "react-leaflet";import "leaflet/dist/leaflet.css";
-import L from "leaflet";
+import { useState } from "react";import { MapContainer, TileLayer, useMapEvents, Marker, Popup } from "react-leaflet";import "leaflet/dist/leaflet.css";import L from "leaflet";
 import api from "../assets/api";
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
@@ -55,7 +54,7 @@ function Map() {
 	return (
 		<div className="relative">
 			<MapContainer
-				center={[7.820428, 123.226817]}
+				center={[7.820577, 123.22358]}
 				zoom={16}
 				style={{ width: "100%", height: "100vh" }}>
 				<TileLayer
