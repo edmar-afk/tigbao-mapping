@@ -37,7 +37,7 @@ function Admin() {
 						/>
 						<div className="ml-4">
 							<p className="text-sm text-slate-900 font-medium">Admin Panel</p>
-							<p className="text-xs text-slate-500 mt-0.5">Tibao Barangay System</p>
+							<p className="text-xs text-slate-500 mt-0.5">Tigbao Barangay System</p>
 						</div>
 					</div>
 
