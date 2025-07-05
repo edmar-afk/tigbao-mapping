@@ -16,7 +16,7 @@ function Pwd() {
 
 	const deletePwd = async (id) => {
 		try {
-			await api.delete(`/pwds/${id}/`);
+			await api.delete(`/api/pwd/delete/${id}/`);
 			setPwds((prev) => prev.filter((p) => p.id !== id));
 		} catch (err) {
 			console.error("Failed to delete PWD:", err);
