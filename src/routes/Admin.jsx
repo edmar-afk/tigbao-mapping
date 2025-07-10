@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";import { Link } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import Pwd from "./Pwd";
 import Seniors from "./Seniors";
@@ -29,61 +28,44 @@ function Admin() {
 
 	return (
 		<div className="flex">
-			<nav className="bg-white shadow-md border-r border-gray-200 h-screen fixed top-0 left-0 min-w-[250px] py-6 px-4 overflow-auto">
-				<div className="relative flex flex-col h-full">
-					<div className="flex flex-wrap items-center cursor-pointer relative">
-						<img
-							src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flag_of_Tigbao_ZDS.jpg/1200px-Flag_of_Tigbao_ZDS.jpg"
-							className="w-10 h-10 rounded-full object-cover"
-							alt="Logo"
-						/>
-						<div className="ml-4">
-							<p className="text-sm text-slate-900 font-medium">Admin Panel</p>
-							<p className="text-xs text-slate-500 mt-0.5">Tigbao Barangay System</p>
-						</div>
+			<nav className="bg-white shadow-md border-r border-gray-200 h-screen fixed top-0 left-0 w-20 py-6 px-2">
+				<div className="flex flex-col items-center h-full space-y-6">
+					<img
+						src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flag_of_Tigbao_ZDS.jpg/1200px-Flag_of_Tigbao_ZDS.jpg"
+						className="w-10 h-10 rounded-full object-cover"
+						alt="Logo"
+					/>
+
+					<div className="flex-1 flex flex-col items-center space-y-4 mt-6">
+						{navItems.map(({ id, label, icon }) => (
+							<button
+								key={id}
+								onClick={() => setActiveTab(id)}
+								className={`relative group pt-2 pb-4 px-3 rounded-full transition-all ${
+									activeTab === id ? "bg-orange-600 text-white" : "hover:bg-orange-400 hover:text-white text-gray-700"
+								}`}>
+								<div className="w-5 h-5">{icon}</div>
+								<span className="absolute left-full ml-3 top-1/2 -translate-y-1/2 whitespace-nowrap text-sm bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+									{label}
+								</span>
+							</button>
+						))}
 					</div>
 
-					<hr className="my-6 border-gray-200" />
-
-					<div>
-						<h4 className="text-sm text-slate-500 mb-4">Modules</h4>
-						<ul className="space-y-4 px-2 flex-1">
-							{navItems.map(({ id, label, icon }) => (
-								<li key={id}>
-									<button
-										onClick={() => setActiveTab(id)}
-										className={`text-sm flex items-center font-medium transition-all w-full ${
-											activeTab === id ? "text-blue-600" : "text-slate-800 hover:text-blue-600"
-										}`}>
-										<span className="w-5 h-5 mr-3">{icon}</span>
-										<span>{label}</span>
-									</button>
-								</li>
-							))}
-						</ul>
-					</div>
-
-					<hr className="my-6 border-gray-200" />
-
-					<div className="mt-auto">
-						<ul className="space-y-4 px-2">
-							<li>
-								<Link
-									to="/"
-									className="text-slate-800 text-sm flex items-center font-medium hover:text-blue-600 transition-all">
-									<LogoutIcon
-										fontSize="small"
-										className="w-4 h-4 mr-3"
-									/>
-									<span>Logout</span>
-								</Link>
-							</li>
-						</ul>
+					<div className="mt-auto mb-4">
+						<Link
+							to="/"
+							className="relative group p-3 rounded-full hover:bg-orange-400 hover:text-white text-gray-700 transition-all">
+							<LogoutIcon fontSize="small" />
+							<span className="absolute left-full ml-3 top-1/2 -translate-y-1/2 whitespace-nowrap text-sm bg-black text-white px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+								Logout
+							</span>
+						</Link>
 					</div>
 				</div>
 			</nav>
 
-			<main className="ml-[250px] flex-1 p-6">
+			<main className="ml-20 flex-1 p-6">
 				{activeTab === "dashboard" && <Dashboard />}
 				{activeTab === "pwd" && <Pwd />}
 				{activeTab === "seniors" && <Seniors />}

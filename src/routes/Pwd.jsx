@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";import api from "../assets/api";
-import AddPwd from "../components/admin/AddPwd";
+import React, { useEffect, useState } from "react";import api from "../assets/api";import AddPwd from "../components/admin/AddPwd";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 function Pwd() {
@@ -46,9 +45,15 @@ function Pwd() {
 						<div
 							key={pwd.id}
 							className="bg-white border border-orange-200 rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
-							<h2 className="text-lg font-semibold text-gray-800 mb-2">{pwd.people}</h2>
-							<p className="text-sm text-gray-600 mb-1">Age: {pwd.age}</p>
-							<p className="text-sm text-gray-600 mb-4">Gender: {pwd.gender}</p>
+							<h2 className="text-lg font-semibold text-gray-800 mb-4">{pwd.people}</h2>
+
+							<div className="grid grid-cols-2 gap-2 text-sm text-gray-600 mb-4">
+								<p>Age: {pwd.age}</p>
+								<p>Gender: {pwd.gender}</p>
+								<p>Status: {pwd.status}</p>
+								<p>Purok: {pwd.purok}</p>
+							</div>
+
 							<button
 								type="button"
 								onClick={() => deletePwd(pwd.id)}

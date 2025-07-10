@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";import api from "../assets/api";
-import AddSeniors from "../components/admin/AddSeniors";
+import React, { useEffect, useState } from "react";import api from "../assets/api";import AddSeniors from "../components/admin/AddSeniors";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 function Seniors() {
@@ -47,8 +46,12 @@ function Seniors() {
 							key={senior.id}
 							className="bg-white border border-orange-200 rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
 							<h2 className="text-lg font-semibold text-gray-800 mb-2">{senior.people}</h2>
-							<p className="text-sm text-gray-600 mb-1">Age: {senior.age}</p>
-							<p className="text-sm text-gray-600 mb-4">Gender: {senior.gender}</p>
+							<div className="grid grid-cols-2 gap-2 text-sm text-gray-600 mb-4">
+								<p>Age: {senior.age}</p>
+								<p>Gender: {senior.gender}</p>
+								<p>Status: {senior.status}</p>
+								<p>Purok: {senior.purok}</p>
+							</div>
 							<button
 								type="button"
 								onClick={() => deleteSenior(senior.id)}

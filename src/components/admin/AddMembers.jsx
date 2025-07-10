@@ -14,6 +14,8 @@ function AddMembers() {
 		name: "",
 		age: "",
 		role: "",
+		purok: "",
+		status: "",
 		household: "",
 	});
 	const [error, setError] = useState("");
@@ -33,7 +35,14 @@ function AddMembers() {
 	};
 
 	const handleClose = () => {
-		setFormData({ name: "", age: "", role: "", household: "" });
+		setFormData({
+			name: "",
+			age: "",
+			role: "",
+			purok: "",
+			status: "",
+			household: "",
+		});
 		setError("");
 		setOpen(false);
 	};
@@ -97,9 +106,10 @@ function AddMembers() {
 									value={formData.name}
 									onChange={handleChange}
 									required
-									className="shadow appearance-none border rounded w-full py-2 px-3 text-yellow-700 leading-tight focus:outline-none focus:shadow-outline"
+									className="shadow appearance-none border rounded w-full py-2 px-3 text-yellow-700"
 								/>
 							</div>
+
 							<div className="mb-4">
 								<label
 									className="block text-yellow-700 font-bold mb-2"
@@ -114,9 +124,10 @@ function AddMembers() {
 									value={formData.age}
 									onChange={handleChange}
 									required
-									className="shadow appearance-none border rounded w-full py-2 px-3 text-yellow-700 leading-tight focus:outline-none focus:shadow-outline"
+									className="shadow appearance-none border rounded w-full py-2 px-3 text-yellow-700"
 								/>
 							</div>
+
 							<div className="mb-4">
 								<label
 									className="block text-yellow-700 font-bold mb-2"
@@ -129,7 +140,7 @@ function AddMembers() {
 									value={formData.role}
 									onChange={handleChange}
 									required
-									className="shadow appearance-none border rounded w-full py-2 px-3 text-yellow-700 leading-tight focus:outline-none focus:shadow-outline">
+									className="shadow appearance-none border rounded w-full py-2 px-3 text-yellow-700">
 									<option
 										value=""
 										disabled>
@@ -141,6 +152,58 @@ function AddMembers() {
 									<option value="Daughter">Daughter</option>
 								</select>
 							</div>
+
+							<div className="mb-4">
+								<label
+									className="block text-yellow-700 font-bold mb-2"
+									htmlFor="purok">
+									Purok
+								</label>
+								<select
+									id="purok"
+									name="purok"
+									value={formData.purok}
+									onChange={handleChange}
+									required
+									className="shadow appearance-none border rounded w-full py-2 px-3 text-yellow-700">
+									<option
+										value=""
+										disabled>
+										Select Purok
+									</option>
+									<option value="Purok 1">Purok 1</option>
+									<option value="Purok 2">Purok 2</option>
+									<option value="Purok 3">Purok 3</option>
+									<option value="Purok 4">Purok 4</option>
+									<option value="Purok 5">Purok 5</option>
+									<option value="Purok 6">Purok 6</option>
+									<option value="Purok 7">Purok 7</option>
+								</select>
+							</div>
+
+							<div className="mb-4">
+								<label
+									className="block text-yellow-700 font-bold mb-2"
+									htmlFor="status">
+									Status
+								</label>
+								<select
+									id="status"
+									name="status"
+									value={formData.status}
+									onChange={handleChange}
+									required
+									className="shadow appearance-none border rounded w-full py-2 px-3 text-yellow-700">
+									<option
+										value=""
+										disabled>
+										Select Status
+									</option>
+									<option value="Single">Single</option>
+									<option value="Married">Married</option>
+								</select>
+							</div>
+
 							<div className="mb-4">
 								<label
 									className="block text-yellow-700 font-bold mb-2"
@@ -153,7 +216,7 @@ function AddMembers() {
 									value={formData.household}
 									onChange={handleChange}
 									required
-									className="shadow appearance-none border rounded w-full py-2 px-3 text-yellow-700 leading-tight focus:outline-none focus:shadow-outline">
+									className="shadow appearance-none border rounded w-full py-2 px-3 text-yellow-700">
 									<option
 										value=""
 										disabled>
@@ -168,11 +231,13 @@ function AddMembers() {
 									))}
 								</select>
 							</div>
+
 							{error && <p className="text-sm text-red-500 mb-4">{error}</p>}
+
 							<div className="flex items-center justify-center mb-2">
 								<button
 									type="submit"
-									className="bg-yellow-900 text-white py-2 px-4 rounded hover:bg-yellow-800 focus:outline-none focus:shadow-outline">
+									className="bg-yellow-900 text-white py-2 px-4 rounded hover:bg-yellow-800 focus:outline-none">
 									Submit
 								</button>
 							</div>

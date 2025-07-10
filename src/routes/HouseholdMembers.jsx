@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";import api from "../assets/api";
-import AddMembers from "../components/admin/AddMembers";
-
+import { useEffect, useState } from "react";import api from "../assets/api";import AddMembers from "../components/admin/AddMembers";
 function HouseholdMembers() {
 	const [households, setHouseholds] = useState([]);
 
@@ -37,7 +35,7 @@ function HouseholdMembers() {
 							key={household.id}
 							className="bg-white border border-orange-200 rounded-xl shadow-md p-6 hover:shadow-lg transition duration-300">
 							<h2 className="text-lg font-semibold text-gray-800 mb-4">
-								{household.members.length > 0 && household.members[0].role} of {household.family_name} Family
+								{household.members.length > 0 && household.members[0].role} Member/s of {household.family_name} Family
 							</h2>
 							{household.members.length > 0 ? (
 								<ul className="space-y-3">
@@ -47,6 +45,8 @@ function HouseholdMembers() {
 											className="text-sm text-gray-700 border-b border-gray-200 pb-2">
 											<p className="font-medium">{member.name}</p>
 											<p className="text-xs text-gray-600">Age: {member.age}</p>
+											<p className="text-xs text-gray-600">Status: {member.status}</p>
+											<p className="text-xs text-gray-600">Purok: {member.purok}</p>
 											<p className="text-xs text-gray-600">Role: {member.role}</p>
 										</li>
 									))}
