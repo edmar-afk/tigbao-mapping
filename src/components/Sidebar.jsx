@@ -49,7 +49,7 @@ function Sidebar({ isVisible, categoryKey }) {
 				) : categoryKey === "feedbacks" ? (
 					<FeedbackChart />
 				) : (
-					<p className="text-gray-500 text-center pt-44 text-xl">No Data found.</p>
+					<p className="text-gray-500 text-center pt-44 text-xl">Select from the navigation to display statistics around Tigbao.</p>
 				)}
 			</div>
 		</div>
