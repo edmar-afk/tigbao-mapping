@@ -36,7 +36,7 @@ function Sidebar({ isVisible, categoryKey }) {
 	return (
 		<div
 			className={`fixed top-8 right-8 bottom-8 z-[999] bg-white p-4 shadow-lg transition-all duration-300 rounded-2xl`}
-			style={{ width: isResizing ? "401px" : "400px" }}>
+			style={{ width: isResizing ? "301px" : "300px" }}>
 			<div className="h-[calc(100%-56px)] overflow-y-auto overflow-x-hidden pt-8 space-y-4">
 				{categoryKey === "pwds" ? (
 					<PwdCharts />
