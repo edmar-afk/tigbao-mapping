@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import api from "../../assets/api";
+import { useState, useEffect } from "react";import api from "../../assets/api";
 
 function InfrasChart() {
 	const [data, setData] = useState([]);
@@ -18,7 +17,8 @@ function InfrasChart() {
 		fetchInfras();
 	}, []);
 
-	const defaultImage = "https://images.unsplash.com/photo-1499856871958-5b9627545d1a";
+	const defaultImage =
+		"https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Flag_of_Tigbao_ZDS.jpg/1200px-Flag_of_Tigbao_ZDS.jpg";
 
 	return (
 		<div className="flex flex-col items-center mt-10">
