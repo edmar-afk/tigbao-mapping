@@ -1,7 +1,4 @@
-import { useState } from "react";import { MapContainer, TileLayer, useMapEvents, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
-import L from "leaflet";
-import api from "../assets/api";
+import { useState } from "react";import { MapContainer, TileLayer, useMapEvents, Marker, Popup } from "react-leaflet";import "leaflet/dist/leaflet.css";import L from "leaflet";import api from "../assets/api";
 import Sidebar from "./Sidebar";
 import TopBar from "./TopBar";
 import FeedBack from "./FeedBack";
@@ -105,6 +102,8 @@ function Map() {
 												<Pwds
 													people={item.people}
 													age={item.age}
+													status={item.status}
+													purok={item.purok}
 													gender={item.gender}
 												/>
 											</>
@@ -123,6 +122,8 @@ function Map() {
 												<Seniors
 													people={item.people}
 													age={item.age}
+													status={item.status}
+													purok={item.purok}
 													gender={item.gender}
 												/>
 											</>
